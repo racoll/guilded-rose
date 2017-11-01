@@ -7,6 +7,33 @@ class GildedRose
   def update_quality()
     @items.each do |item|
 
+      # make this into a router method, based upon the name of the item
+      # this will then send each item to a specific method
+      # teased out from below...
+        # ie a method that will update sell_in
+        # a method that will decrease quality
+        # a method that will increase quality
+        # etcetera
+
+        # every class should have one reason to change!
+        # single responsibility principle
+        # if it doesn't fit on my screen, it probably needs to
+        # be split up into different classes!
+
+        # if you have stuff in different places,
+        # you end up with defined relationships between boxes of code
+
+
+      # item class
+      # brie class
+      # sulfurus class
+
+      # min tkewys:
+      # refactoring!!! into methods, and then into classes
+      # don't submit a tech test with one class in it!!
+      
+
+
       if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
         if item.quality > 0
           if item.name != "Sulfuras, Hand of Ragnaros"
@@ -30,7 +57,7 @@ class GildedRose
           end
         end
       end
-      
+
       if item.name != "Sulfuras, Hand of Ragnaros"
         item.sell_in = item.sell_in - 1
       end

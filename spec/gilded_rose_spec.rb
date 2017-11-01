@@ -21,6 +21,10 @@ RSpec.describe GildedRose do
      expect(items[0].quality).to eq(9)
    end
 
+   expect { gilded.update_quality}.to change {brie.sell_in}.by(1)
+
+    .not_to change
+     
    it "quality cannot be negative" do
      items = [Item.new("foo", 10, 0)]
      GildedRose.new(items).update_quality()
